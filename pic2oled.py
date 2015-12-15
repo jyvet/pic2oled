@@ -49,13 +49,13 @@ def checkArgs():
                 width, "x", height, "), expected", oledWidth,
                 "x", oledHeight, file=sys.stderr)
             exit(-1)
+        
+        return im
     else :
         print("Error: invalid number of arguments", file=sys.stderr)
         print("Usage:")
         print("python " + sys.argv[0] + " <filename>")
-        printUsage()
-
-    return im
+        exit(-1)
 
 
 ## Convert pixel values to bytes for OLED screens. In the same column, values in
